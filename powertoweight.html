@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horsepower Per Ton Calculator</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #111;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .box {
+        background: #1e1e1e;
+        padding: 24px;
+        border-radius: 12px;
+        width: 300px;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-top: 0;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        margin-bottom: 16px;
+        border: none;
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        background: #4caf50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #43a047;
+    }
+
+    #result {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>HP Per Ton Calculator</h1>
+
+    <label>Weight (lbs)</label>
+    <input type="number" id="weight" placeholder="3000">
+
+    <label>Horsepower</label>
+    <input type="number" id="hp" placeholder="250">
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function calculate() {
+    const weight = parseFloat(document.getElementById("weight").value);
+    const hp = parseFloat(document.getElementById("hp").value);
+
+    if (!weight || !hp) {
+        document.getElementById("result").innerText = "Enter valid numbers";
+        return;
+    }
+
+    const tons = weight / 2200;
+    const hpPerTon = hp / tons;
+
+    document.getElementById("result").innerText =
+        hpPerTon.toFixed(1) + " HP/ton";
+}
+</script>
+
+</body>
+</html>
