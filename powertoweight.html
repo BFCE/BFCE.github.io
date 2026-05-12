@@ -99,43 +99,50 @@
 
     <h2>Cars</h2>
     <div class="preset-row">
-        <button class="preset-btn" onclick="setWeight(1900)">CRX</button>
-        <button class="preset-btn" onclick="setWeight(2100)">EF Hatch</button>
-        <button class="preset-btn" onclick="setWeight(2300)">EF Sedan</button>
-        <button class="preset-btn" onclick="setWeight(2400)">EG Coupe</button>
-        <button class="preset-btn" onclick="setWeight(2450)">EG Sedan</button>
-        <button class="preset-btn" onclick="setWeight(2200)">EG Hatch</button>
-        <button class="preset-btn" onclick="setWeight(2400)">Del Sol</button>
-        <button class="preset-btn" onclick="setWeight(2400)">EK Hatch</button>
-        <button class="preset-btn" onclick="setWeight(2550)">EK Coupe</button>
-        <button class="preset-btn" onclick="setWeight(2600)">EK Sedan</button>
-        <button class="preset-btn" onclick="setWeight(2700)">DC2 Integra</button>
-        <button class="preset-btn" onclick="setWeight(2877)">8th Gen Civic Si</button>
-        <button class="preset-btn" onclick="setWeight(3188)">FL5 Type R</button>
-        
-        <button class="preset-btn" onclick="setWeight(2100)">NA Miata</button>
-        <button class="preset-btn" onclick="setWeight(2300)">NB Miata</button>
-        
-        <button class="preset-btn" onclick="setWeight(2760)">1st Gen BRZ</button>
-        <button class="preset-btn" onclick="setWeight(2815)">2nd Gen BRZ</button>
+    <button class="preset-btn" onclick="setCar(1900, 108)">CRX</button>
 
-        <button class="preset-btn" onclick="setWeight(3550)">Mustang EcoBoost</button>
-        <button class="preset-btn" onclick="setWeight(3825)">Mustang GT</button>
-        <button class="preset-btn" onclick="setWeight(3223)">Focus ST</button>
-        <button class="preset-btn" onclick="setWeight(3459)">Focus RS</button>
+    <button class="preset-btn" onclick="setCar(2100, 92)">EF Hatch</button>
+    <button class="preset-btn" onclick="setCar(2300, 92)">EF Sedan</button>
 
-        <button class="preset-btn" onclick="setWeight(3685)">Camaro SS</button>
-        <button class="preset-btn" onclick="setWeight(3880)">Camaro ZL1</button>
+    <button class="preset-btn" onclick="setCar(2400, 125)">EG Coupe</button>
+    <button class="preset-btn" onclick="setCar(2450, 125)">EG Sedan</button>
+    <button class="preset-btn" onclick="setCar(2200, 125)">EG Hatch</button>
 
-        <button class="preset-btn" onclick="setWeight(3975)">Challenger SXT</button>
-        <button class="preset-btn" onclick="setWeight(4250)">Challenger R/T</button>
-        <button class="preset-btn" onclick="setWeight(4450)">Challenger Hellcat</button>
+    <button class="preset-btn" onclick="setCar(2400, 160)">Del Sol</button>
 
-        <button class="preset-btn" onclick="setWeight(3200)">E46</button>
-        <button class="preset-btn" onclick="setWeight(3415)">E46 M3</button>
+    <button class="preset-btn" onclick="setCar(2400, 127)">EK Hatch</button>
+    <button class="preset-btn" onclick="setCar(2550, 160)">EK Coupe</button>
+    <button class="preset-btn" onclick="setCar(2600, 160)">EK Sedan</button>
 
-        <button class="preset-btn" onclick="setWeight(3200)">Golf GTI</button>
-        <button class="preset-btn" onclick="setWeight(3460)">Golf R</button>
+    <button class="preset-btn" onclick="setCar(2700, 200)">DC2 Integra</button>
+
+    <button class="preset-btn" onclick="setCar(2877, 197)">8th Gen Civic Si</button>
+    <button class="preset-btn" onclick="setCar(3188, 315)">FL5 Type R</button>
+
+    <button class="preset-btn" onclick="setCar(2100, 116)">NA Miata</button>
+    <button class="preset-btn" onclick="setCar(2300, 133)">NB Miata</button>
+
+    <button class="preset-btn" onclick="setCar(2760, 200)">1st Gen BRZ</button>
+    <button class="preset-btn" onclick="setCar(2815, 228)">2nd Gen BRZ</button>
+
+    <button class="preset-btn" onclick="setCar(3550, 310)">Mustang EcoBoost</button>
+    <button class="preset-btn" onclick="setCar(3825, 480)">Mustang GT</button>
+
+    <button class="preset-btn" onclick="setCar(3223, 252)">Focus ST</button>
+    <button class="preset-btn" onclick="setCar(3459, 350)">Focus RS</button>
+
+    <button class="preset-btn" onclick="setCar(3685, 455)">Camaro SS</button>
+    <button class="preset-btn" onclick="setCar(3880, 650)">Camaro ZL1</button>
+
+    <button class="preset-btn" onclick="setCar(3975, 303)">Challenger SXT</button>
+    <button class="preset-btn" onclick="setCar(4250, 375)">Challenger R/T</button>
+    <button class="preset-btn" onclick="setCar(4450, 717)">Challenger Hellcat</button>
+
+    <button class="preset-btn" onclick="setCar(3200, 225)">E46 330i</button>
+    <button class="preset-btn" onclick="setCar(3415, 333)">E46 M3</button>
+
+    <button class="preset-btn" onclick="setCar(3200, 241)">Golf GTI</button>
+    <button class="preset-btn" onclick="setCar(3460, 315)">Golf R</button>
 
         
     </div>
@@ -193,6 +200,12 @@
 <script>
 function setWeight(weight) {
     document.getElementById("weight").value = weight;
+}
+
+function setCar(weight, hp) {
+    document.getElementById("weight").value = weight;
+    document.getElementById("hp").value = hp;
+    calculate();
 }
 
 function setHP(hp) {
