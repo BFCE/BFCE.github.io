@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -97,52 +97,60 @@
 
     <h1>HP Per Ton Calculator</h1>
 
+<label>Filter Region</label>
+<select id="regionFilter" onchange="filterCars()">
+    <option value="all">All</option>
+    <option value="jdm">JDM</option>
+    <option value="euro">Euro</option>
+    <option value="usdm">American</option>
+</select>
+    
     <h2>Cars</h2>
     <div class="preset-row">
     <button class="preset-btn" onclick="setCar(1900, 108)">CRX</button>
 
-    <button class="preset-btn" onclick="setCar(2100, 92)">EF Hatch</button>
-    <button class="preset-btn" onclick="setCar(2300, 92)">EF Sedan</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(2100, 92)">EF Hatch</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(2300, 92)">EF Sedan</button>
 
-    <button class="preset-btn" onclick="setCar(2400, 125)">EG Coupe</button>
-    <button class="preset-btn" onclick="setCar(2450, 125)">EG Sedan</button>
-    <button class="preset-btn" onclick="setCar(2200, 125)">EG Hatch</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(2400, 125)">EG Coupe</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(2450, 125)">EG Sedan</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(2200, 125)">EG Hatch</button>
 
-    <button class="preset-btn" onclick="setCar(2400, 160)">Del Sol</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(2400, 160)">Del Sol</button>
 
-    <button class="preset-btn" onclick="setCar(2400, 127)">EK Hatch</button>
-    <button class="preset-btn" onclick="setCar(2550, 160)">EK Coupe</button>
-    <button class="preset-btn" onclick="setCar(2600, 160)">EK Sedan</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(2400, 127)">EK Hatch</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(2550, 160)">EK Coupe</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(2600, 160)">EK Sedan</button>
 
-    <button class="preset-btn" onclick="setCar(2700, 200)">DC2 Integra</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(2700, 200)">DC2 Integra</button>
 
-    <button class="preset-btn" onclick="setCar(2877, 197)">8th Gen Civic Si</button>
-    <button class="preset-btn" onclick="setCar(3188, 315)">FL5 Type R</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(2877, 197)">8th Gen Civic Si</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(3188, 315)">FL5 Type R</button>
 
-    <button class="preset-btn" onclick="setCar(2100, 116)">NA Miata</button>
-    <button class="preset-btn" onclick="setCar(2300, 133)">NB Miata</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(2100, 116)">NA Miata</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(2300, 133)">NB Miata</button>
 
-    <button class="preset-btn" onclick="setCar(2760, 200)">1st Gen BRZ</button>
-    <button class="preset-btn" onclick="setCar(2815, 228)">2nd Gen BRZ</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(2760, 200)">1st Gen BRZ</button>
+    <button class="preset-btn" data-region="jdm" onclick="setCar(2815, 228)">2nd Gen BRZ</button>
 
-    <button class="preset-btn" onclick="setCar(3550, 310)">Mustang EcoBoost</button>
-    <button class="preset-btn" onclick="setCar(3825, 480)">Mustang GT</button>
+    <button class="preset-btn" data-region="usdm" onclick="setCar(3550, 310)">Mustang EcoBoost</button>
+    <button class="preset-btn" data-region="usdm" onclick="setCar(3825, 480)">Mustang GT</button>
 
-    <button class="preset-btn" onclick="setCar(3223, 252)">Focus ST</button>
-    <button class="preset-btn" onclick="setCar(3459, 350)">Focus RS</button>
+    <button class="preset-btn" data-region="usdm" onclick="setCar(3223, 252)">Focus ST</button>
+    <button class="preset-btn" data-region="usdm" onclick="setCar(3459, 350)">Focus RS</button>
 
-    <button class="preset-btn" onclick="setCar(3685, 455)">Camaro SS</button>
-    <button class="preset-btn" onclick="setCar(3880, 650)">Camaro ZL1</button>
+    <button class="preset-btn" data-region="usdm" onclick="setCar(3685, 455)">Camaro SS</button>
+    <button class="preset-btn" data-region="usdm" onclick="setCar(3880, 650)">Camaro ZL1</button>
 
-    <button class="preset-btn" onclick="setCar(3975, 303)">Challenger SXT</button>
-    <button class="preset-btn" onclick="setCar(4250, 375)">Challenger R/T</button>
-    <button class="preset-btn" onclick="setCar(4450, 717)">Challenger Hellcat</button>
+    <button class="preset-btn" data-region="usdm" onclick="setCar(3975, 303)">Challenger SXT</button>
+    <button class="preset-btn" data-region="usdm" onclick="setCar(4250, 375)">Challenger R/T</button>
+    <button class="preset-btn" data-region="usdm" onclick="setCar(4450, 717)">Challenger Hellcat</button>
 
-    <button class="preset-btn" onclick="setCar(3200, 225)">E46 330i</button>
-    <button class="preset-btn" onclick="setCar(3415, 333)">E46 M3</button>
+    <button class="preset-btn" data-region="euro" onclick="setCar(3200, 225)">E46 330i</button>
+    <button class="preset-btn" data-region="euro" onclick="setCar(3415, 333)">E46 M3</button>
 
-    <button class="preset-btn" onclick="setCar(3200, 241)">Golf GTI</button>
-    <button class="preset-btn" onclick="setCar(3460, 315)">Golf R</button>
+    <button class="preset-btn" data-region="euro" onclick="setCar(3200, 241)">Golf GTI</button>
+    <button class="preset-btn" data-region="euro" onclick="setCar(3460, 315)">Golf R</button>
 
         
     </div>
@@ -226,6 +234,19 @@ function calculate() {
 
     document.getElementById("result").innerText =
         hpPerTon.toFixed(1) + " HP/ton";
+}
+    
+function filterCars() {
+    const region = document.getElementById("regionFilter").value;
+    const cars = document.querySelectorAll("[data-region]");
+
+    cars.forEach(btn => {
+        if (region === "all" || btn.dataset.region === region) {
+            btn.style.display = "inline-block";
+        } else {
+            btn.style.display = "none";
+        }
+    });
 }
 </script>
 
