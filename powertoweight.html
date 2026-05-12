@@ -6,24 +6,28 @@
 <title>HP Per Ton Calculator</title>
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #111;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        padding: 20px;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
 
-    .box {
-        background: #1e1e1e;
-        padding: 24px;
-        border-radius: 12px;
-        width: 420px;
-    }
+    margin: 0;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+}
+
+  .box {
+    background: #1e1e1e;
+    padding: 24px;
+    border-radius: 12px;
+
+    width: 95%;
+    max-width: 1100px;
+
+    margin: auto;
+}
 
     h1 {
         font-size: 24px;
@@ -43,15 +47,12 @@
         margin-bottom: 20px;
     }
 
-    .preset-btn {
-        background: #333;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        padding: 8px 10px;
-        cursor: pointer;
-        font-size: 14px;
-    }
+.preset-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
 
     .preset-btn:hover {
         background: #555;
